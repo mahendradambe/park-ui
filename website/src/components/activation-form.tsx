@@ -5,7 +5,6 @@ import { activateLicense } from '~/app/actions'
 import { Input } from '~/components/ui/input'
 import { SubmitButton } from '~/components/ui/submit-button'
 import { Text } from '~/components/ui/text'
-import { SignInButton } from './auth/sign-in-button'
 
 interface Props {
   authenticated?: boolean
