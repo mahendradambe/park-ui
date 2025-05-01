@@ -4,7 +4,7 @@
   "private": true,
   "workspaces": ["components/*", "packages/*", "scripts", "website"],
   "scripts": {
-    "postinstall": "lefthook install",
+    "clean": "pnpm dlx rimraf --glob **/node_modules **/dist **/styled-system",
     "scripts": "bun run --cwd scripts",
     "web": "bun run --cwd website",
     "cli": "bun run --cwd packages/cli",
@@ -24,15 +24,10 @@
     "@biomejs/biome": "1.9.4",
     "@types/bun": "1.2.10",
     "caniuse-lite": "1.0.30001715",
-    "lefthook": "1.11.11",
     "turbo": "2.5.1",
     "typescript": "5.8.3",
     "vercel": "41.6.2",
     "vercel-submodules": "1.0.10"
   },
-  "packageManager": "bun@1.2.10",
-  "trustedDependencies": ["@park-ui/website"],
-  "overrides": {
-    "@pandacss/dev": "0.53.4"
-  }
+  "trustedDependencies": ["@park-ui/website"]
 }

@@ -1,0 +1,6 @@
+{
+  "name": "@park-ui/prettier",
+  "version": "0.0.0",
+  "main": "prettier.config.json",
+  "private": true
+}
