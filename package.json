@@ -5,8 +5,9 @@
   "scripts": {
     "clean": "pnpm dlx rimraf --glob **/node_modules **/dist **/styled-system",
     "scripts": "pnpm --filter  scripts",
-    "web": "pnpm --filter  website",
-    "cli": "pnpm --filter  packages/cli",
+    "web": "pnpm --filter @park-ui/website",
+    "web:next": "pnpm --filter @park-ui/web-next",
+    "cli": "pnpm --filter packages/cli",
     "panda": "pnpm --filter  packages/preset",
     "react": "pnpm --filter  components/react",
     "lint": "turbo run lint",

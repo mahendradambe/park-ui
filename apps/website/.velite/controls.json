@@ -1,0 +1,473 @@
+[
+  {
+    "component": "avatar",
+    "props": {
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "2xl"
+        ],
+        "defaultValue": "2xl"
+      }
+    }
+  },
+  {
+    "component": "badge",
+    "props": {
+      "variant": {
+        "options": [
+          "solid",
+          "subtle",
+          "outline"
+        ],
+        "defaultValue": "subtle"
+      },
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "button",
+    "props": {
+      "variant": {
+        "options": [
+          "solid",
+          "subtle",
+          "outline",
+          "ghost",
+          "link"
+        ],
+        "defaultValue": "solid"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "2xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "checkbox",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "code",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      },
+      "variant": {
+        "options": [
+          "outline",
+          "ghost"
+        ],
+        "defaultValue": "outline"
+      }
+    }
+  },
+  {
+    "component": "drawer",
+    "props": {
+      "variant": {
+        "options": [
+          "right",
+          "left"
+        ],
+        "defaultValue": "right"
+      }
+    }
+  },
+  {
+    "component": "icon-button",
+    "props": {
+      "variant": {
+        "options": [
+          "solid",
+          "outline",
+          "ghost",
+          "link"
+        ],
+        "defaultValue": "outline"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "2xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "icon",
+    "props": {
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "2xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "input",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "kbd",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "menu",
+    "props": {
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "number-input",
+    "props": {
+      "size": {
+        "options": [
+          "md",
+          "lg",
+          "xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "pin-input",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "progress",
+    "props": {
+      "type": {
+        "options": [
+          "linear",
+          "circular"
+        ],
+        "defaultValue": "linear"
+      },
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "radio-button-group",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ],
+        "defaultValue": "md"
+      },
+      "variant": {
+        "options": [
+          "solid",
+          "outline"
+        ],
+        "defaultValue": "solid"
+      }
+    }
+  },
+  {
+    "component": "radio-group",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      },
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "defaultValue": "vertical"
+      }
+    }
+  },
+  {
+    "component": "rating-group",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "lg"
+      }
+    }
+  },
+  {
+    "component": "segment-group",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md"
+        ],
+        "defaultValue": "md"
+      },
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "defaultValue": "vertical"
+      }
+    }
+  },
+  {
+    "component": "select",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      },
+      "variant": {
+        "options": [
+          "ghost",
+          "outline"
+        ],
+        "defaultValue": "outline"
+      }
+    }
+  },
+  {
+    "component": "slider",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "spinner",
+    "props": {
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "splitter",
+    "props": {
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "defaultValue": "horizontal"
+      }
+    }
+  },
+  {
+    "component": "switch",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "table",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md"
+        ],
+        "defaultValue": "md"
+      },
+      "variant": {
+        "options": [
+          "plain",
+          "outline"
+        ],
+        "defaultValue": "plain"
+      }
+    }
+  },
+  {
+    "component": "tabs",
+    "props": {
+      "variant": {
+        "options": [
+          "line",
+          "outline",
+          "enclosed"
+        ],
+        "defaultValue": "line"
+      },
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "defaultValue": "horizontal"
+      },
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "textarea",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ],
+        "defaultValue": "md"
+      }
+    }
+  },
+  {
+    "component": "toggle-group",
+    "props": {
+      "size": {
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "defaultValue": "md"
+      },
+      "variant": {
+        "options": [
+          "outline",
+          "ghost"
+        ],
+        "defaultValue": "outline"
+      },
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "defaultValue": "horizontal"
+      }
+    }
+  }
+]

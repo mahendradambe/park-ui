@@ -110,7 +110,7 @@ import { Button } from '~/components/ui/button'
 
 ### Fixed
 
-- Only add `use client` when the component has multiple parts
+- Only add `` when the component has multiple parts
 
 ## [0.3.0] - 2023-12-04
 

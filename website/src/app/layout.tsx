@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import { ThemeProvider } from 'next-themes'
-import Script from 'next/script'
 import { cx } from 'styled-system/css'
 import { Navbar } from '~/components/navigation/navbar'
+import { ThemeProvider } from '~/lib/theme-provider'
 import { inter, jakarta, outfit, raleway, roboto } from './fonts'
 import './global.css'
 
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
 }
 
 interface Props {
-  auth: React.ReactNode
   children: React.ReactNode
 }
 
@@ -47,7 +45,6 @@ export default function RootLayout(props: Props) {
       suppressHydrationWarning
     >
       <head>
-        <Script src="https://plausible.io/js/plausible.js" data-domain="park-ui.com" />
         <style id="park-ui-gray" />
         <style id="park-ui-accent" />
       </head>
@@ -55,7 +52,6 @@ export default function RootLayout(props: Props) {
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <Navbar />
           {props.children}
-          {props.auth}
         </ThemeProvider>
       </body>
     </html>
