@@ -9,6 +9,3 @@ export declare const pages: Pages[]
 
 export type Controls = Collections['controls']['schema']['_output']
 export declare const controls: Controls[]
-
-export type Blocks = Collections['blocks']['schema']['_output']
-export declare const blocks: Blocks[]

@@ -24,7 +24,6 @@ export const NavbarLinks = () => {
   return (
     <HStack gap="6" me="2">
       <Link to="/">Docs</Link>
-      <Link to="/">Blocks</Link>
     </HStack>
   )
 }

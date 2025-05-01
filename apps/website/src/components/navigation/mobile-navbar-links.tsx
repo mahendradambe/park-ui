@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router"
 import { cva } from 'styled-system/css'
 
 const link = cva({
@@ -22,24 +23,14 @@ const link = cva({
 export const MobileNavbarLinks = () => {
   // const pathname = usePathname()
 
-  return null
-
-  // return (
-  //   <>
-  //     <NextLink
-  //       href="/docs"
-  //       className={link}
-  //       aria-current={pathname.startsWith('/docs') ? 'page' : undefined}
-  //     >
-  //       Docs
-  //     </NextLink>
-  //     <NextLink
-  //       href="/blocks"
-  //       className={link}
-  //       aria-current={pathname.startsWith('/blocks') ? 'page' : undefined}
-  //     >
-  //       Blocks
-  //     </NextLink>
-  //   </>
-  // )
+  return (
+    <>
+      <Link
+        to="/docs"
+        className={link}
+      >
+        Docs
+      </Link>
+    </>
+  )
 }

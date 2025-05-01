@@ -260,8 +260,6 @@ const ThemeScript = React.memo(
       enableColorScheme
     ])
 
-    console.log(`(${script.toString()})(${scriptArgs})`)
-
     return (
       <script
         {...scriptProps}

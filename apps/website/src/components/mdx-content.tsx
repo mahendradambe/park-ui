@@ -7,7 +7,6 @@ import { Pre } from '~/components/ui/pre'
 import { ComponentPlayground } from './docs/component-playground'
 import { ComponentPreview } from './docs/component-preview'
 import { FigmaKitPreview } from './docs/figma-kit-preview'
-import { InstallationGuide } from './docs/installation-guide'
 import { Quickstart } from './docs/quickstart'
 import { ColorGrid } from './theming/color-grid'
 import { ColorPairings } from './theming/color-pairings'
@@ -28,7 +27,6 @@ const sharedComponents = {
   ComponentPlayground,
   Faq,
   FigmaKitPreview,
-  InstallationGuide,
   kbd: Kbd,
   pre: Pre,
   Quickstart,

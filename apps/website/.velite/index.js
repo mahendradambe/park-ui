@@ -2,4 +2,3 @@
 
 export { default as pages } from './pages.json'
 export { default as controls } from './controls.json'
-export { default as blocks } from './blocks.json'
