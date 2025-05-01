@@ -1,6 +1,6 @@
 
 import { ExternalLinkIcon, InfoIcon, OctagonAlertIcon } from 'lucide-react'
-import { Runner } from 'react-runner'
+// import { Runner } from 'react-runner'
 import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
 import { Alert } from '~/components/ui/alert'
 import { Avatar } from '~/components/ui/avatar'
@@ -52,5 +52,6 @@ type Props = {
 
 export const LivePreview = (props: Props) => {
   const { code } = props
-  return <Runner code={code} scope={scope} />
+  return null
+  // return <Runner code={code} scope={scope} />
 }

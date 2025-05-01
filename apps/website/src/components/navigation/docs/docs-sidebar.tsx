@@ -1,7 +1,9 @@
 
 import type { Pages } from '.velite'
 import { Collapsible } from '@ark-ui/react/collapsible'
+import { Link, useRouterState } from '@tanstack/react-router'
 import { ChevronRightIcon } from 'lucide-react'
+import { Badge } from '~/components/ui/badge'
 import { Icon } from '~/components/ui/icon'
 import { recipe } from '../sidebar.recipe'
 
@@ -13,8 +15,7 @@ interface Props {
 
 export const DocsSidebar = (props: Props) => {
   const { groups } = props
-  // const pathname = usePathname()
-  // const params = useParams<{ framework: string }>()
+  const pathname = useRouterState().location.pathname
 
   return (
     <nav>
@@ -32,13 +33,12 @@ export const DocsSidebar = (props: Props) => {
                 </Collapsible.Trigger>
                 <Collapsible.Content>
                   <ul>
-                    {/* {uniqueGroup.map((item) => {
-                      const href = `/${params.framework}/docs/${item.slug}`
+                    {uniqueGroup.map((item) => {
+                      const href = `/docs/${item.slug}` as const
                       return (
                         <li key={item.id}>
-                          <NextLink
-                            href={href}
-                            aria-current={pathname === href ? 'page' : undefined}
+                          <Link
+                            to={href}
                             className={styles.link}
                           >
                             {item.title}
@@ -47,10 +47,10 @@ export const DocsSidebar = (props: Props) => {
                                 {item.status}
                               </Badge>
                             )}
-                          </NextLink>
+                          </Link>
                         </li>
                       )
-                    })} */}
+                    })}
                   </ul>
                 </Collapsible.Content>
               </Collapsible.Root>

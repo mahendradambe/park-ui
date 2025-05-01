@@ -11,14 +11,28 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as DocsRouteImport } from './routes/docs.route'
 import { Route as IndexImport } from './routes/index'
+import { Route as DocsSplatImport } from './routes/docs.$'
 
 // Create/Update Routes
+
+const DocsRouteRoute = DocsRouteImport.update({
+  id: '/docs',
+  path: '/docs',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
+} as any)
+
+const DocsSplatRoute = DocsSplatImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => DocsRouteRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -32,39 +46,73 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/docs/$': {
+      id: '/docs/$'
+      path: '/$'
+      fullPath: '/docs/$'
+      preLoaderRoute: typeof DocsSplatImport
+      parentRoute: typeof DocsRouteImport
+    }
   }
 }
 
 // Create and export the route tree
 
+interface DocsRouteRouteChildren {
+  DocsSplatRoute: typeof DocsSplatRoute
+}
+
+const DocsRouteRouteChildren: DocsRouteRouteChildren = {
+  DocsSplatRoute: DocsSplatRoute,
+}
+
+const DocsRouteRouteWithChildren = DocsRouteRoute._addFileChildren(
+  DocsRouteRouteChildren,
+)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/docs': typeof DocsRouteRouteWithChildren
+  '/docs/$': typeof DocsSplatRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/docs': typeof DocsRouteRouteWithChildren
+  '/docs/$': typeof DocsSplatRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/docs': typeof DocsRouteRouteWithChildren
+  '/docs/$': typeof DocsSplatRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/docs' | '/docs/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/docs' | '/docs/$'
+  id: '__root__' | '/' | '/docs' | '/docs/$'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DocsRouteRoute: typeof DocsRouteRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DocsRouteRoute: DocsRouteRouteWithChildren,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +125,22 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/docs"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/docs": {
+      "filePath": "docs.route.tsx",
+      "children": [
+        "/docs/$"
+      ]
+    },
+    "/docs/$": {
+      "filePath": "docs.$.tsx",
+      "parent": "/docs"
     }
   }
 }

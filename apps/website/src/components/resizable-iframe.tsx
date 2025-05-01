@@ -54,8 +54,6 @@ const PandaProvider = (props: PropsWithChildren) => {
   const iframe = useFrame()
   const { resolvedTheme } = useTheme()
 
-  // useThemeGenerator(iframe)
-
   useEffect(() => {
     const styleTags = document.head.querySelectorAll('link[rel="stylesheet"]')
     styleTags.forEach((styleTag) => {

@@ -1,4 +1,5 @@
 import { SiReact } from '@icons-pack/react-simple-icons'
+import { Link as RouterLink } from '@tanstack/react-router'
 import { ArrowRightIcon } from 'lucide-react'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
@@ -22,18 +23,20 @@ export const Hero = () => {
       </Stack>
       <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
         <Button asChild size={{ base: 'xl', md: '2xl' }}>
-          {/* <NextLink href="/docs/overview/introduction"> */}
+          <RouterLink to="/docs">
             Get Started <ArrowRightIcon />
-          {/* </NextLink> */}
+          </RouterLink>
         </Button>
         <ThemeDrawer isHero />
       </Stack>
       <HStack gap="2">
-            <Box fontSize="3xl"><SiReact /></Box>
-            <Text as="span" color="fg.muted" hideBelow="sm">
-              React
-            </Text>
-          </HStack>
+        <Box fontSize="3xl">
+          <SiReact />
+        </Box>
+        <Text as="span" color="fg.muted" hideBelow="sm">
+          React
+        </Text>
+      </HStack>
     </Stack>
   )
 }
