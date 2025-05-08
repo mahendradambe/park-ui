@@ -8,7 +8,6 @@ import { Heading } from '~/components/ui/heading'
 import { Prose } from '~/components/ui/prose'
 import { Text } from '~/components/ui/text'
 import { getSidebarGroups } from '~/lib/docs'
-import { getServerContext } from '~/lib/server-context'
 
 
 export const Route = createFileRoute('/docs/$')({
@@ -22,8 +21,6 @@ export default function Page() {
   const nextPage = getNextPage(slug)
   const prevPage = getPrevPage(slug)
 
-  const serverContext = getServerContext()
-  serverContext.component = slug[1]
 
   if (currentPage) {
     return (

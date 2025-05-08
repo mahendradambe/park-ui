@@ -3,6 +3,7 @@ import type { Controls } from '.velite'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
 import { Box, Flex, Stack, styled } from 'styled-system/jsx'
+import { suspend } from "suspend-react"
 import { Select, createListCollection } from '~/components/ui/select'
 import { Slider } from '~/components/ui/slider'
 
@@ -23,7 +24,8 @@ export const ComponentPreview = ({ controls }: Props) => {
 
   const hasSettings = Object.keys(props).length > 0
 
-  // const Demo = useMemo(() => getComponent(component), [component])
+  const Component = suspend(() => getComponent(component), [component])
+
 
   return (
     <Flex
@@ -34,7 +36,7 @@ export const ComponentPreview = ({ controls }: Props) => {
       className="not-prose"
     >
       <Flex justify="center" align="center" flex="1" p={{ base: '4', md: '6' }}>
-        {/* <Demo {...state} /> */}
+        {Component && <Component.Demo {...state} />}
       </Flex>
       {hasSettings && (
         <Box minW="52" borderLeftWidth="1px">
@@ -93,5 +95,4 @@ export const ComponentPreview = ({ controls }: Props) => {
   )
 }
 
-// const getComponent = (component: string) =>
-//   dynamic(() => import(`~/demos/${component}.demo`).then((mod) => mod.Demo), { ssr: false })
+const getComponent = (component: string) => import(`../../demos/${component}.demo.tsx`)

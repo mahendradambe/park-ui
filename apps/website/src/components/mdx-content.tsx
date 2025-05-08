@@ -1,5 +1,4 @@
 import * as runtime from 'react/jsx-runtime'
-import { Faq } from '~/components/docs/faq'
 import { Code } from '~/components/ui/code'
 import { Kbd } from '~/components/ui/kbd'
 import { Link } from '~/components/ui/link'
@@ -25,7 +24,6 @@ const sharedComponents = {
   ColorTokens,
   ComponentPreview,
   ComponentPlayground,
-  Faq,
   FigmaKitPreview,
   kbd: Kbd,
   pre: Pre,

@@ -1,4 +1,5 @@
 import { defineConfig } from '@tanstack/react-start/config'
+import dynamicImport from 'vite-plugin-dynamic-import'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
@@ -7,6 +8,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
+      dynamicImport(),
       tsConfigPaths({
         projects: ['./tsconfig.json'],
       }),
