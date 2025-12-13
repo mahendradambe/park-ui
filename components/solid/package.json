@@ -13,24 +13,24 @@
     "typedoc": "scripts typedoc --out ../../website/public/types/solid"
   },
   "dependencies": {
-    "@ark-ui/solid": "5.29.1",
-    "@tanstack/solid-virtual": "3.13.12",
-    "lucide-solid": "0.555.0"
+    "@ark-ui/solid": "5.30.0",
+    "@tanstack/solid-virtual": "3.13.13",
+    "lucide-solid": "0.561.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.6.1",
-    "@pandacss/preset-base": "1.6.1",
-    "@pandacss/preset-panda": "1.6.1",
+    "@pandacss/dev": "1.7.0",
+    "@pandacss/preset-base": "1.7.0",
+    "@pandacss/preset-panda": "1.7.0",
     "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*",
-    "@storybook/addon-a11y": "10.1.4",
-    "@storybook/addon-themes": "10.1.4",
+    "@storybook/addon-a11y": "10.1.8",
+    "@storybook/addon-themes": "10.1.8",
     "lorem-ipsum": "2.0.8",
     "solid-js": "1.9.10",
-    "storybook": "10.1.4",
+    "storybook": "10.1.8",
     "storybook-solidjs-vite": "10.0.9",
     "typescript": "5.9.3",
-    "vite": "7.2.6",
+    "vite": "7.2.7",
     "vite-plugin-solid": "2.11.10",
     "vite-tsconfig-paths": "5.1.4"
   },
