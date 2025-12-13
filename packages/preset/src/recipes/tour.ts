@@ -1,4 +1,4 @@
-import { tourAnatomy } from '@ark-ui/react/tour'
+import { tourAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tour = defineSlotRecipe({

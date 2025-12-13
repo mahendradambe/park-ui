@@ -3,6 +3,12 @@ import { join } from 'node:path'
 import { readFile, readJson, writeFile } from 'fs-extra'
 import type { Registry, RegistryItem } from './schema'
 
+type Framework = 'react' | 'solid'
+
+const replaceFrameworkImports = (content: string, framework: Framework): string => {
+  return content.replace(/@ark-ui\/react\/anatomy/g, `@ark-ui/${framework}/anatomy`)
+}
+
 const resolveFilePath = (filePath: string): string => {
   return join(process.cwd(), filePath)
 }
@@ -38,6 +44,9 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
   const distDir = options?.outputDir ? join(baseDir, options.outputDir) : baseDir
   await mkdir(distDir, { recursive: true })
 
+  // Determine framework from outputDir (e.g., 'react' or 'solid')
+  const framework: Framework = (options?.outputDir as Framework) || 'react'
+
   let successCount = 0
   let errorCount = 0
   const indexItems: Array<{ name: string; type: string }> = []
@@ -45,13 +54,20 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
   for (const item of registry.items) {
     try {
       const filesWithContent = await Promise.all(
-        (item.files ?? []).map(async (file) => ({
-          content: await readFileContent(file.path),
-          type: file.type,
-          path: transformPath(file.path, file.type),
-          exports: file.exports,
-          imports: file.imports,
-        })),
+        (item.files ?? []).map(async (file) => {
+          let content = await readFileContent(file.path)
+          // Replace @ark-ui/react/anatomy with framework-specific import for recipe files
+          if (file.type === 'registry:recipe') {
+            content = replaceFrameworkImports(content, framework)
+          }
+          return {
+            content,
+            type: file.type,
+            path: transformPath(file.path, file.type),
+            exports: file.exports,
+            imports: file.imports,
+          }
+        }),
       )
 
       const output: RegistryItem = {

@@ -2,7 +2,7 @@
   "$schema": "https://park-ui.com/schema/registry-item.json",
   "name": "icon-button",
   "type": "registry:ui",
-  "dependencies": ["@ark-ui/react"],
+  "dependencies": ["@ark-ui/solid"],
   "files": [
     {
       "content": "import { Button, type ButtonProps } from './button'\n\nexport interface IconButtonProps extends ButtonProps {}\n\nexport const IconButton = (props: IconButtonProps) => {\n  return <Button px=\"0\" py=\"0\" {...props} />\n}\n",

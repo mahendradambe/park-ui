@@ -1,4 +1,4 @@
-import { progressAnatomy } from '@ark-ui/react/progress'
+import { progressAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const progress = defineSlotRecipe({

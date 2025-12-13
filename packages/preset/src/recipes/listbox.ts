@@ -1,4 +1,4 @@
-import { listboxAnatomy } from '@ark-ui/react/listbox'
+import { listboxAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const listbox = defineSlotRecipe({

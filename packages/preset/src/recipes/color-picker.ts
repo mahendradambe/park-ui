@@ -1,4 +1,4 @@
-import { colorPickerAnatomy } from '@ark-ui/react/color-picker'
+import { colorPickerAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const colorPicker = defineSlotRecipe({

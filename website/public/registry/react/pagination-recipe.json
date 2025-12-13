@@ -5,7 +5,7 @@
   "dependencies": ["@pandacss/dev", "@ark-ui/react"],
   "files": [
     {
-      "content": "import { paginationAnatomy } from '@ark-ui/react/pagination'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const pagination = defineSlotRecipe({\n  className: 'pagination',\n  slots: paginationAnatomy.keys(),\n  base: {},\n})\n",
+      "content": "import { paginationAnatomy } from '@ark-ui/react/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const pagination = defineSlotRecipe({\n  className: 'pagination',\n  slots: paginationAnatomy.keys(),\n  base: {},\n})\n",
       "type": "registry:recipe",
       "path": "pagination.ts",
       "imports": "import { pagination } from './pagination'"

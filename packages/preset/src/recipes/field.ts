@@ -1,4 +1,4 @@
-import { fieldAnatomy } from '@ark-ui/react/field'
+import { fieldAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const field = defineSlotRecipe({

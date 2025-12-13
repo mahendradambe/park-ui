@@ -2,6 +2,8 @@ import { join, parse, resolve } from 'node:path'
 import { Glob } from 'bun'
 import { type ExportDeclaration, Project } from 'ts-morph'
 
+type Framework = 'react' | 'solid'
+
 type ModuleDeclaration =
   | {
       type: 'named'
@@ -21,6 +23,10 @@ type ModuleDeclaration =
         value?: string
       }[]
     }
+
+const replaceFrameworkImports = (content: string, framework: Framework): string => {
+  return content.replace(/@ark-ui\/react\/anatomy/g, `@ark-ui/${framework}/anatomy`)
+}
 
 const getExportEntries = (exp: ExportDeclaration) => {
   const exports: ModuleDeclaration[] = []
@@ -50,7 +56,7 @@ const getExportEntries = (exp: ExportDeclaration) => {
   return exports
 }
 
-const resolveRecipe = async (fileName: string) => {
+const resolveRecipe = async (fileName: string, framework: Framework) => {
   const recipeFileName = fileName.replace('.tsx', '.ts')
   const file = Bun.file(join('./packages/preset/src/recipes/', recipeFileName))
 
@@ -60,10 +66,12 @@ const resolveRecipe = async (fileName: string) => {
   const content = await file.text().catch(() => null)
   if (!content) return
 
+  const transformedContent = replaceFrameworkImports(content, framework)
+
   return {
     type: 'recipe',
     fileName: recipeFileName,
-    content,
+    content: transformedContent,
     indexFile: {
       imports: [{ type: 'named', moduleSpecifier: `./${name}`, symbols: [{ name }] }],
       exports: [
@@ -173,68 +181,76 @@ const generateColors = async () => {
 
 const main = async () => {
   await generateColors()
-  const project = new Project({
-    compilerOptions: {
-      jsx: 1,
-    },
-  })
 
-  const source = project.addSourceFileAtPath(
-    resolve('./components/react/src/components/ui/index.ts'),
-  )
+  const frameworks: Framework[] = ['react', 'solid']
 
-  const index: { id: string }[] = []
+  for (const framework of frameworks) {
+    const project = new Project({
+      compilerOptions: {
+        jsx: 1,
+      },
+    })
 
-  for (const exp of source.getExportDeclarations()) {
-    const moduleSpecifier = exp.getModuleSpecifierValue()
-    if (!moduleSpecifier) continue
+    const source = project.addSourceFileAtPath(
+      resolve(`./components/${framework}/src/components/ui/index.ts`),
+    )
 
-    const exports = getExportEntries(exp)
+    const index: { id: string }[] = []
 
-    const moduleSourceFile = exp.getModuleSpecifierSourceFile()
-    if (moduleSourceFile) {
-      const file = Bun.file(moduleSourceFile.getFilePath())
-      if (!file.name) continue
+    for (const exp of source.getExportDeclarations()) {
+      const moduleSpecifier = exp.getModuleSpecifierValue()
+      if (!moduleSpecifier) continue
 
-      const id = parse(file.name).name
-      const fileName = parse(file.name).base
+      const exports = getExportEntries(exp)
 
-      index.push({
-        id,
-      })
+      const moduleSourceFile = exp.getModuleSpecifierSourceFile()
+      if (moduleSourceFile) {
+        const file = Bun.file(moduleSourceFile.getFilePath())
+        if (!file.name) continue
 
-      const recipe = await resolveRecipe(fileName)
-      const content = await file.text()
+        const id = parse(file.name).name
+        const fileName = parse(file.name).base
 
-      const files = [
-        {
-          type: 'component',
-          fileName,
-          content,
-          indexFile: {
-            exports,
-          },
-        },
-        recipe,
-      ].filter(Boolean)
+        index.push({
+          id,
+        })
 
-      Bun.write(
-        `./website/public/registry/components/react/${id}.json`,
-        JSON.stringify(
+        const recipe = await resolveRecipe(fileName, framework)
+        const content = await file.text()
+
+        const files = [
           {
-            $schema: 'https://park-ui.com/schema/registry-item.json',
-            id,
             type: 'component',
-            files,
+            fileName,
+            content,
+            indexFile: {
+              exports,
+            },
           },
-          null,
-          2,
-        ),
-      )
-    }
-  }
+          recipe,
+        ].filter(Boolean)
 
-  Bun.write(`./website/public/registry/components/react/index.json`, JSON.stringify(index, null, 2))
+        Bun.write(
+          `./website/public/registry/components/${framework}/${id}.json`,
+          JSON.stringify(
+            {
+              $schema: 'https://park-ui.com/schema/registry-item.json',
+              id,
+              type: 'component',
+              files,
+            },
+            null,
+            2,
+          ),
+        )
+      }
+    }
+
+    Bun.write(
+      `./website/public/registry/components/${framework}/index.json`,
+      JSON.stringify(index, null, 2),
+    )
+  }
 }
 
 await main()

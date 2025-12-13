@@ -1,4 +1,4 @@
-import { editableAnatomy } from '@ark-ui/react/editable'
+import { editableAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const editable = defineSlotRecipe({

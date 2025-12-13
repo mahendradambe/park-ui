@@ -1,4 +1,4 @@
-import { timerAnatomy } from '@ark-ui/react/timer'
+import { timerAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const timer = defineSlotRecipe({

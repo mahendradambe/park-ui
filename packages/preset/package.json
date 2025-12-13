@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "registry:prepare": "scripts registry prepare --name @park-ui/react 'src/theme/colors/*.ts'",
-    "registry:build": "scripts registry build react",
+    "registry:build-react": "scripts registry build react",
     "registry:build-solid": "scripts registry build solid"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-import { qrCodeAnatomy } from '@ark-ui/react/qr-code'
+import { qrCodeAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const qrCode = defineSlotRecipe({

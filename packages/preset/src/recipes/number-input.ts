@@ -1,4 +1,4 @@
-import { numberInputAnatomy } from '@ark-ui/react/number-input'
+import { numberInputAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 import { input } from './input'
 

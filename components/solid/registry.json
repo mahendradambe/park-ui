@@ -42,7 +42,7 @@
     {
       "name": "accordion-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/accordion.ts",
@@ -90,7 +90,7 @@
     {
       "name": "avatar-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/avatar.ts",
@@ -210,7 +210,7 @@
     {
       "name": "carousel-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/carousel.ts",
@@ -234,7 +234,7 @@
     {
       "name": "checkbox-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/checkbox.ts",
@@ -258,7 +258,7 @@
     {
       "name": "clipboard-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/clipboard.ts",
@@ -318,7 +318,7 @@
     {
       "name": "collapsible-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/collapsible.ts",
@@ -342,7 +342,7 @@
     {
       "name": "color-picker-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/color-picker.ts",
@@ -366,7 +366,7 @@
     {
       "name": "combobox-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/combobox.ts",
@@ -391,7 +391,7 @@
     {
       "name": "date-picker-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/date-picker.ts",
@@ -415,7 +415,7 @@
     {
       "name": "dialog-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/dialog.ts",
@@ -439,7 +439,7 @@
     {
       "name": "drawer-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/drawer.ts",
@@ -463,7 +463,7 @@
     {
       "name": "editable-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/editable.ts",
@@ -487,7 +487,7 @@
     {
       "name": "field-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/field.ts",
@@ -511,7 +511,7 @@
     {
       "name": "fieldset-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/fieldset.ts",
@@ -535,7 +535,7 @@
     {
       "name": "file-upload-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/file-upload.ts",
@@ -607,7 +607,7 @@
     {
       "name": "hover-card-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/hover-card.ts",
@@ -631,7 +631,7 @@
     {
       "name": "icon-button",
       "type": "registry:ui",
-      "dependencies": ["@ark-ui/react"],
+      "dependencies": ["@ark-ui/solid"],
       "files": [
         {
           "path": "src/components/ui/icon-button.tsx",
@@ -666,7 +666,7 @@
     {
       "name": "index",
       "type": "registry:ui",
-      "dependencies": ["@ark-ui/react"],
+      "dependencies": ["@ark-ui/solid"],
       "files": [
         {
           "path": "src/components/ui/index.tsx",
@@ -821,7 +821,7 @@
     {
       "name": "menu-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/menu.ts",
@@ -845,7 +845,7 @@
     {
       "name": "number-input-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/number-input.ts",
@@ -870,7 +870,7 @@
     {
       "name": "pagination-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/pagination.ts",
@@ -894,7 +894,7 @@
     {
       "name": "pin-input-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/pin-input.ts",
@@ -919,7 +919,7 @@
     {
       "name": "popover-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/popover.ts",
@@ -943,7 +943,7 @@
     {
       "name": "progress-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/progress.ts",
@@ -967,7 +967,7 @@
     {
       "name": "radio-card-group-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-card-group.ts",
@@ -991,7 +991,7 @@
     {
       "name": "radio-group-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-group.ts",
@@ -1015,7 +1015,7 @@
     {
       "name": "rating-group-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/rating-group.ts",
@@ -1063,7 +1063,7 @@
     {
       "name": "segment-group-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/segment-group.ts",
@@ -1087,7 +1087,7 @@
     {
       "name": "select-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/select.ts",
@@ -1135,7 +1135,7 @@
     {
       "name": "slider-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/slider.ts",
@@ -1194,7 +1194,7 @@
     {
       "name": "splitter-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/splitter.ts",
@@ -1218,7 +1218,7 @@
     {
       "name": "switch-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/switch.ts",
@@ -1266,7 +1266,7 @@
     {
       "name": "tabs-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tabs.ts",
@@ -1290,7 +1290,7 @@
     {
       "name": "tags-input-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tags-input.ts",
@@ -1362,7 +1362,7 @@
     {
       "name": "toast-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/toast.ts",
@@ -1386,7 +1386,7 @@
     {
       "name": "toggle-group-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/toggle-group.ts",
@@ -1410,7 +1410,7 @@
     {
       "name": "tooltip-recipe",
       "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "dependencies": ["@pandacss/dev", "@ark-ui/solid"],
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tooltip.ts",

@@ -1,4 +1,4 @@
-import { dialogAnatomy } from '@ark-ui/react/dialog'
+import { dialogAnatomy } from '@ark-ui/react/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const dialog = defineSlotRecipe({

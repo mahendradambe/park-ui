@@ -3,7 +3,13 @@ import fg from 'fast-glob'
 import { readFile, writeFile } from 'fs-extra'
 import type { Registry, RegistryItemPartial } from './schema'
 
+type Framework = 'react' | 'solid'
+
 const toKebabCase = (str: string) => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
+
+const replaceFrameworkInDependencies = (deps: string[], framework: Framework): string[] => {
+  return deps.map((dep) => dep.replace('@ark-ui/react', `@ark-ui/${framework}`))
+}
 
 const extractDependencies = (sourceCode: string) => {
   const importRegex = /import\s+(?:[\w*{}\s,]+\s+from\s+)?['"]([^'"]+)['"]/g
@@ -83,7 +89,10 @@ const extractRecipeImport = async (recipeName: string): Promise<string | undefin
   return undefined
 }
 
-const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryItemPartial[]> => {
+const generateRecipeItems = async (
+  recipeNames: Set<string>,
+  framework: Framework,
+): Promise<RegistryItemPartial[]> => {
   console.log('\n🔍 Scanning recipe files...')
   const recipeItems: RegistryItemPartial[] = []
 
@@ -95,7 +104,10 @@ const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryIt
     try {
       const content = (await readFile(recipePath, 'utf-8')) as string
       const deps = extractDependencies(content)
-      const dependencies = ['@pandacss/dev', ...deps.filter((d) => d !== '@pandacss/dev')]
+      const dependencies = replaceFrameworkInDependencies(
+        ['@pandacss/dev', ...deps.filter((d) => d !== '@pandacss/dev')],
+        framework,
+      )
 
       const recipeDepRegex = /import\s+\{[^}]*\}\s+from\s+['"]\.\/([\w-]+)['"]/g
       const recipeDeps: string[] = []
@@ -180,6 +192,9 @@ export const generateRegistry = async (options: { name: string; pattern?: string
   const pattern = options.pattern || 'src/components/ui/*.tsx'
   console.log(`🔍 Scanning files matching: ${pattern}`)
 
+  // Extract framework from registry name (e.g., '@park-ui/solid' -> 'solid')
+  const framework: Framework = options.name.includes('solid') ? 'solid' : 'react'
+
   const files = await fg(pattern, {
     ignore: ['**/*.test.tsx', '**/*.spec.tsx', '**/index.ts'],
   })
@@ -202,7 +217,7 @@ export const generateRegistry = async (options: { name: string; pattern?: string
     const item: RegistryItemPartial = {
       name: componentName,
       type: registryType,
-      dependencies: dependencies.length > 0 ? dependencies : ['@ark-ui/react'],
+      dependencies: dependencies.length > 0 ? dependencies : [`@ark-ui/${framework}`],
       files: [
         {
           path: filePath,
@@ -237,7 +252,7 @@ export const generateRegistry = async (options: { name: string; pattern?: string
     console.log(`✅ Processed: ${componentName}`)
   }
 
-  const recipeItems = await generateRecipeItems(allRecipes)
+  const recipeItems = await generateRecipeItems(allRecipes, framework)
   const allItems = [...items, ...recipeItems].sort((a, b) => a.name.localeCompare(b.name))
 
   const registry: Registry = {
