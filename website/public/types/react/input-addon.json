@@ -2,7 +2,7 @@
   "Root": {
     "props": {
       "variant": {
-        "type": "'outline' | 'surface'",
+        "type": "'outline' | 'surface' | 'subtle'",
         "defaultValue": "'outline'",
         "isRequired": false
       },
