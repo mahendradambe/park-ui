@@ -54,22 +54,22 @@
     "@clack/prompts": "1.0.0-alpha.6",
     "commander": "14.0.2",
     "cosmiconfig": "9.0.0",
-    "effect": "3.19.12",
-    "fs-extra": "11.3.2",
+    "effect": "3.19.15",
+    "fs-extra": "11.3.3",
     "magicast": "0.5.1",
     "package-directory": "8.1.0",
     "picocolors": "1.1.1",
     "ts-morph": "27.0.2",
     "tsconfck": "3.1.6",
     "tsconfig-paths": "4.2.0",
-    "zod": "4.1.13"
+    "zod": "4.3.6"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.7.0",
+    "@pandacss/dev": "1.8.1",
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "25.0.1",
-    "release-it": "19.1.0",
+    "@types/node": "25.0.10",
+    "release-it": "19.2.4",
     "tsup": "8.5.1",
     "typescript": "5.9.3"
   },
