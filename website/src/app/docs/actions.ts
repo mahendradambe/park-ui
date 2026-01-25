@@ -14,6 +14,8 @@ interface Props {
   name: string
 }
 
+const toKebabCase = (str: string) => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
+
 export const getComponentSourceCode = async (props: Props): Promise<FrameworkSourceCode[]> => {
   const { component, name } = props
 
@@ -22,7 +24,7 @@ export const getComponentSourceCode = async (props: Props): Promise<FrameworkSou
   return Promise.all(
     frameworkConfigs.map(async ({ framework, lang }) => {
       const fileName = `${name}.${lang}`
-      const path = join(baseDir, framework, 'src/examples', component, fileName)
+      const path = join(baseDir, framework, 'src/examples', component, toKebabCase(fileName))
       const code = await readFile(path, 'utf-8').catch(() => null)
 
       return {
