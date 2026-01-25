@@ -298,7 +298,7 @@ This separation allows you to:
 ## Resources
 
 - **Documentation:** https://park-ui.com
-- **GitHub:** https://github.com/cschroeter/park-ui
+- **GitHub:** https://github.com/chakra-ui/park-ui
 - **Ark UI Docs:** https://ark-ui.com
 - **Panda CSS Docs:** https://panda-css.com
 - **Creator:** [@grizzly_codes](https://twitter.com/grizzly_codes)
