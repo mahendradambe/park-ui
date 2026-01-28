@@ -425,6 +425,18 @@
       ]
     },
     {
+      "name": "display-value",
+      "type": "registry:ui",
+      "dependencies": ["solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/display-value.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["span"]
+    },
+    {
       "name": "drawer",
       "type": "registry:ui",
       "dependencies": ["@ark-ui/solid", "solid-js"],

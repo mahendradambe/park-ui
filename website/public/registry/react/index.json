@@ -140,6 +140,10 @@
     "type": "registry:recipe"
   },
   {
+    "name": "display-value",
+    "type": "registry:ui"
+  },
+  {
     "name": "drawer",
     "type": "registry:ui"
   },

@@ -443,6 +443,19 @@
       ]
     },
     {
+      "name": "display-value",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/display-value.tsx",
+          "type": "registry:ui",
+          "exports": "export { DisplayValue, type DisplayValueProps } from './display-value'"
+        }
+      ],
+      "registryDependencies": ["span"]
+    },
+    {
       "name": "drawer",
       "type": "registry:ui",
       "dependencies": ["@ark-ui/react", "react"],
