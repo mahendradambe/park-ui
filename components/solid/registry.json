@@ -816,7 +816,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["absolute-center", "spinner"]
+      "registryDependencies": ["absolute-center", "span", "spinner"]
     },
     {
       "name": "menu",

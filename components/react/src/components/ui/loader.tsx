@@ -1,7 +1,8 @@
 'use client'
 import { forwardRef } from 'react'
-import { type HTMLStyledProps, styled } from 'styled-system/jsx'
+import type { HTMLStyledProps } from 'styled-system/jsx'
 import { AbsoluteCenter } from './absolute-center'
+import { Span } from './span'
 import { Spinner } from './spinner'
 
 export interface LoaderProps extends HTMLStyledProps<'span'> {
@@ -26,8 +27,6 @@ export interface LoaderProps extends HTMLStyledProps<'span'> {
 
   children?: React.ReactNode
 }
-
-const Span = styled('span')
 
 export const Loader = forwardRef<HTMLSpanElement, LoaderProps>(function Loader(props, ref) {
   const {

@@ -1,6 +1,7 @@
 import { type JSX, splitProps } from 'solid-js'
-import { type HTMLStyledProps, styled } from 'styled-system/jsx'
+import type { HTMLStyledProps } from 'styled-system/jsx'
 import { AbsoluteCenter } from './absolute-center'
+import { Span } from './span'
 import { Spinner } from './spinner'
 
 export interface LoaderProps extends HTMLStyledProps<'span'> {
@@ -25,8 +26,6 @@ export interface LoaderProps extends HTMLStyledProps<'span'> {
 
   children?: JSX.Element
 }
-
-const Span = styled('span')
 
 export const Loader = (props: LoaderProps) => {
   const [local, rest] = splitProps(props, [
